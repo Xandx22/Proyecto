@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Admin - Zoo</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="container">
+  <div class="header"><h1>Administración</h1><div class="nav"><a href="dashboard.php" class="btn secondary">Panel</a></div></div>
+  <div class="card">
+    <div style="display:flex;gap:12px;align-items:center">
+      <label class="small">Seleccionar tabla</label>
+      <select id="tableSelect">
+        <option value="Habitat">Habitat</option>
+        <option value="Cuidador">Cuidador</option>
+        <option value="Alimento">Alimento</option>
+        <option value="Animal">Animal</option>
+        <option value="Animal_Permanente">Animal_Permanente</option>
+        <option value="Animal_Temporal">Animal_Temporal</option>
+        <option value="Animal_Mamifero">Animal_Mamifero</option>
+        <option value="Animal_Ave">Animal_Ave</option>
+        <option value="Animal_Reptil">Animal_Reptil</option>
+        <option value="Animal_Anfibio">Animal_Anfibio</option>
+        <option value="Supervisa">Supervisa</option>
+        <option value="RegistroAlimentacion">RegistroAlimentacion</option>
+        <option value="Cria">Cria</option>
+      </select>
+      <button id="btnView" class="btn">Ver</button>
+      <button id="btnInsert" class="btn secondary">Insertar</button>
+    </div>
+    <div class="table-wrap" style="margin-top:12px;">
+      <iframe id="viewFrame" src="admin.php?table=Habitat" style="width:100%;height:360px;border:0;"></iframe>
+    </div>
+  </div>
+</div>
+<script>
+const sel = document.getElementById('tableSelect');
+const viewFrame = document.getElementById('viewFrame');
+document.getElementById('btnView').addEventListener('click', () => {
+  viewFrame.src = 'admin.php?table=' + encodeURIComponent(sel.value);
+});
+document.getElementById('btnInsert').addEventListener('click', () => {
+  viewFrame.src = 'admin.php?table=' + encodeURIComponent(sel.value) + '&form=insert';
+});
+</script>
+</body>
+</html>

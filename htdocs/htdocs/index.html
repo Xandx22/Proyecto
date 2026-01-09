@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Login - Zoo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Iniciar sesión - Zoológico</h1>
+    <div class="nav small"><a href="registro.html" class="small">Crear cuenta</a></div>
+  </div>
+  <div class="form card">
+    <form action="login.php" method="POST">
+      <label class="small">Correo</label>
+      <input type="email" name="correo" required>
+      <label class="small">Contraseña</label>
+      <input type="password" name="contrasena" required>
+      <div style="display:flex; gap:8px; margin-top:10px;">
+        <button type="submit" name="login">Entrar</button>
+        <a href="registro.html" class="button secondary" style="text-decoration:none; padding:10px 14px; border-radius:8px;">Registro</a>
+      </div>
+    </form>
+  </div>
+  <p class="small">Usuario de prueba: <strong>alanjov@gmail.com</strong> / <strong>qwerty</strong></p>
+</div>
+</body>
+</html>
